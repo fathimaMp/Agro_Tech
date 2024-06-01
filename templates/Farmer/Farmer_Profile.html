@@ -1,0 +1,73 @@
+{% extends 'Farmer/Farmer_Nav.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% load static %}
+<head>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+{% block content %}
+<section class="main" style="height:auto;">
+        <center>
+    <div class="col-xs-12"  style="padding:10px;">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <div class="alert alert-warning" role="alert" style="width:50%;">
+                <li style="list-style-type: none;" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            </div>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+    </center>
+    <div class="main-div">
+        <form action="" enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label class="form-label">Farmer_Id</label>
+                <input class="form-control" disabled type="text" value="{{farmer.Farmer_Id}}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">First Name</label>
+                <input class="form-control" disabled type="text" value="{{farmer.First_Name}}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Last Name</label>
+                <input class="form-control" disabled type="text" value="{{farmer.Last_Name}}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input class="form-control" disabled type="text" value="{{farmer.Email}}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="exampleFormControlTextarea1">Address</label>
+                <textarea class="form-control" disabled id="exampleFormControlTextarea1"
+                          rows="3">{{farmer.Address}}</textarea>
+            </div>
+        <div class="mb-3">
+                <label class="form-label">Phone_No</label>
+                <input class="form-control" disabled type="text" value="{{farmer.Phone_No}}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input class="form-control" disabled type="password" value="{{farmer.Password}}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Id Proof</label>
+                <img class="rounded mx-auto d-block" src="{{farmer.Id_Proof.url}}">
+            </div>
+            <div class="mb-3">
+                <a class="btn btn-outline-success mx-auto d-grid gap-2 col-6"
+                   href="{% url 'Edit_FarmerProfile' login_id %}"> Edit</a>
+            </div>
+            <br>
+            <br>
+        </form>
+
+    </div>
+</section>
+
+{% endblock content %}

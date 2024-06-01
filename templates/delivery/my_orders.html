@@ -1,0 +1,56 @@
+{% extends 'delivery/delivery_agent_nav.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% load static %}
+<head>
+    <link href="{% static 'css/style1.css' %}" rel="stylesheet">
+</head>
+{% block content %}
+<section class="main" style="height:auto;">
+    <div class="main-div">
+        <table class="table table-hover table-responsive">
+            <tr>
+                <th>Order Id</th>
+                <th>Product</th>
+                <th>Product Name</th>
+                <th>Total Amount</th>
+                <th>Farmer Name</th>
+                <th>Farmer Address</th>
+                <th>Farmer Phone No</th>
+                <th>Pickup Date</th>
+                <th>Pickup status</th>
+                <th>Customer Name</th>
+                <th>Customer Address</th>
+                <th>Customer Phone No</th>
+                <th>Delivery status</th>
+            </tr>
+            {% for i in page_obj %}
+            <tr>
+                <td>{{i.order_id}}</td>
+                <td><img alt="" height="50px" src="{{i.cart_item_id.product_id.Image.url}}" width="50px"></td>
+                <td>{{i.cart_item_id.product_id.Name}}</td>
+                <td>₹ {{i.total_product_price}}</td>
+                <td>{{i.cart_item_id.farmers_id.First_Name}} {{i.cart_item_id.farmers_id.Last_Name}}</td>
+                <td>{{i.cart_item_id.farmers_id.Address}}</td>
+                <td>{{i.cart_item_id.farmers_id.Phone_No}}</td>
+                <td>{{i.pickup_date}}</td>
+                {% if i.pickup_status %}
+                <td><a class="btn btn-success" style="pointer-events: none;">Picked Up</a></td>
+                {% else %}
+                <td><a class="btn btn-danger" href="{% url 'pickup_order' login_id i.order_id %}">Pickup</a></td>
+                {% endif %}
+                <td>{{i.cart_item_id.user_id.First_Name}} {{i.cart_item_id.user_id.Last_Name}}</td>
+                <td>{{i.cart_item_id.user_id.Address}}</td>
+                <td>{{i.cart_item_id.user_id.Phone_No}}</td>
+                <td><a class="btn btn-danger" href="{% url 'deliver_order' login_id i.order_id %}">Delivery Pending</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <center>{% include "pagination.html" %}</center>
+</section>
+{% endblock content %}
+

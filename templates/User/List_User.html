@@ -1,0 +1,32 @@
+
+{% extends 'Admin/Admin_nav.html' %}
+{% load static %}
+{% block content %}
+<h1 align="center"><i>User Details</i></h1>
+<table class="table" border="2">
+    <tr>
+        <th><b>User_Id</b></th>
+        <th><b>First_Name</b></th>
+        <th><b>Last_Name</b></th>
+        <th><b>Email</b></th>
+        <th><b>Address</b></th>
+        <th><b>Phone_No</b></th>
+        <th><b>Password</b></th>
+        <th><b>Status</b></th>
+    </tr>
+    {% for i in page_obj %}
+    <tr>
+        <th>{{i.User_Id}}</th>
+        <th>{{i.First_Name}}</th>
+        <th>{{i.Last_Name}}</th>
+        <th>{{i.Email}}</th>
+        <th>{{i.Address}}</th>
+        <th>{{i.Phone_No}}</th>
+        <th>{{i.Password}}</th>
+        <th><a href="{% url 'Delete_User' login_id  i.User_Id %}">Delete </a></th>
+    </tr>
+    {% endfor %}
+</table><br>
+</table><br>
+<center>{% include 'Pagination.html' %}</center>
+{% endblock content %}

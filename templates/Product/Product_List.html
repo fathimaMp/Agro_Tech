@@ -1,0 +1,45 @@
+{% extends 'Farmer/Farmer_Nav.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% load static %}
+<head>
+    <link href="{% static 'css/style1.css' %}" rel="stylesheet">
+</head>
+{% block content %}
+<section class="main" style="height:auto;background-color:#d9d9d9">
+    <div class="main-div">
+        <table border="1" class="table table-striped" style="">
+            <tr>
+                <th>Product Id</th>
+                <th>Category</th>
+                <th>Product</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Product Image</th>
+                <th colspan="2">Operations</th>
+            </tr>
+
+            {% for i in page_obj %}
+            <tr>
+                <td>{{i.Product_Id}}</td>
+                <td>{{i.Categories}}</td>
+                <td>{{i.Name}}</td>
+                <td>{{i.Description}}</td>
+                <td>₹{{i.Price}}</td>
+                <td><img class="rounded mx-auto d-block" height="100px" src="{{i.Image.url}}" width="100px"></td>
+                <td><a class="btn btn-success" href="{% url 'Edit_Product' login_id i.Product_Id %}">Edit</a></td>
+                <td><a class="btn btn-danger" href="{% url 'Delete_Product' login_id i.Product_Id %}">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <center>{% include "pagination.html" %}</center>
+    <br>
+    <br>
+    <br>
+    <br>
+</section>
+{% endblock content %}

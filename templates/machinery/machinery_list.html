@@ -1,0 +1,45 @@
+{% extends 'FarmHouse/FarmHouse_Nav.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% load static %}
+<head>
+    <link href="{% static 'css/style1.css' %}" rel="stylesheet">
+</head>
+{% block content %}
+<section class="main" style="height:auto; background-color:#d9d9d9">
+    <div class="main-div">
+        <table border="1" class="table table-striped" style="">
+            <tr>
+                <th>Product Id</th>
+                <th>Category</th>
+                <th>Product</th>
+                <th>Description</th>
+                <th>Rent Per Day</th>
+                <th>Product Image</th>
+                <th colspan="2">Operations</th>
+            </tr>
+
+            {% for i in page_obj %}
+            <tr>
+                <td>{{i.machine_id}}</td>
+                <td>{{i.categories}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.description}}</td>
+                <td>₹{{i.price}}</td>
+                <td><img class="rounded mx-auto d-block" height="100px" src="{{i.image.url}}" width="100px"></td>
+                <td><a class="btn btn-success" href="{% url 'edit_machinery' login_id i.machine_id %}">Edit</a></td>
+                <td><a class="btn btn-danger" href="{% url 'delete_machinery' login_id i.machine_id %}">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <center>{% include "pagination.html" %}</center>
+    <br>
+    <br>
+    <br>
+    <br>
+</section>
+{% endblock content %}

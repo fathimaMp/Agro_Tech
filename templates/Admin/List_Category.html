@@ -1,0 +1,44 @@
+{% extends 'Admin/Admin_nav.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% load static %}
+
+{% block content %}
+<section class="main" style="height:auto;background-color:#d9d9d9">
+     <center>
+    <div class="col-xs-12"  style="padding:10px;">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <div class="alert alert-warning" role="alert" style="width:50%;">
+                <li style="list-style-type: none;" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            </div>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+    </center>
+    <div class="main-div">
+        <table border="" class="table table-striped">
+            <tr>
+                <th>Category Id</th>
+                <th>Category</th>
+                <th colspan="2">Operation</th>
+            </tr>
+            {% for i in page_obj %}
+            <tr>
+                <td>{{i.Category_Id}}</td>
+                <td>{{i.Category_Name}}</td>
+                <td><a class="btn btn-success" href="{% url 'Edit_Category' login_id i.Category_Id %}">Edit</a></td>
+                <td><a class="btn btn-danger" href="{% url 'Delete_Category' login_id i.Category_Id %}">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+    <center style="padding:60px;">{% include "pagination.html" %}</center>
+</section>
+{% endblock content %}

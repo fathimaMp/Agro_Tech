@@ -1,0 +1,32 @@
+{% extends 'Farmer/Farmer_Nav.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% load static %}
+<head>
+    <link href="{% static 'css/style1.css' %}" rel="stylesheet">
+</head>
+{% block content %}
+<section class="main" style="height:auto;background-color:#d9d9d9">
+ <div class="col-xs-12"  style="padding:100px;">
+    <table border="1" class="table table-striped" style="">
+        <tr>
+            <th>Caption</th>
+            <th>Uploaded_On</th>
+            <th>Last_Date</th>
+        </tr>
+
+        {% for i in page_obj %}
+        <tr>
+            <td>{{i.caption}}</td>
+            <td>{{i.uploaded_on}}</td>
+            <td>{{i.lastdate}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+<center>{% include "pagination.html" %}</center>
+    </section>
+{% endblock content %}

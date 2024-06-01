@@ -1,0 +1,30 @@
+{% extends 'User/User_Nav.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% load static %}
+<head>
+    <link href="{% static 'css/style1.css' %}" rel="stylesheet">
+</head>
+{% block content %}
+
+<section class="main" style="height:auto;">
+    <div style="padding:100px;">
+         <h2 style="color:green"> Order Placed!!! Thank You For Choosing Agro Tech Store...</h2><br>
+        <h6 style="color:orange">
+            Our Delivery Agent Mr.{{ agent.name }} will deliver your order within two working days.<br><br>
+            cash on delivery : ₹ {{ total_price }}
+        </h6>
+
+        <div class="mb-3">
+                <label class="form-label">Id Proof</label>
+                <img class="rounded mx-auto d-block" src="{{agent.id_proof.url}}" width="400px" height="250px">
+        </div><center><br><br>
+        <a class="btn btn-outline-success mx-auto d-grid gap-2 col-6" href="{% url 'order_history' login_id %}" >My Orders</a></center>
+    </div>
+
+    </center>
+</section>
+{% endblock content %}

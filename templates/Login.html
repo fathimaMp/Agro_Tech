@@ -1,0 +1,35 @@
+{% extends 'Main_Nav.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% block content %}
+<section class="main" style="height:auto;background-image:url('{% static 'images/black.jpg' %}'); background-repeat:no-repeat; background-attachment:fixed; background-position:top; background-size:1200px 900px; height:100vh;">
+                <h3 style="color:green"; align="center"><u><b>LOGIN PAGE</b></u></h3>
+        <center>
+            <div class="col-xs-12" style="padding:10px;">
+<center>
+    <div class="col-xs-12"  style="padding:10px;">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <div class="alert alert-warning" role="alert" style="width:50%;">
+                <li style="list-style-type: none;" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            </div>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+    </center>
+<form action="" method="post" style="color:white";>
+    {% csrf_token %}
+    <div style="width:30%;">
+    {% bootstrap_form form %}
+        </div>
+    <input type="submit" value="LOGIN" style="background-color:green;">
+</form>
+            </div>
+        </center>
+</section>
+{% endblock content %}

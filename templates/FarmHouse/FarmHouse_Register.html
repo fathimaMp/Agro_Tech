@@ -1,0 +1,36 @@
+{% extends 'Main_Nav.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% block content %}
+<section class="main" style="height:auto;background-image:url('{% static 'images/b11.1.jpg' %}'); background-repeat:no-repeat; background-attachment:fixed; background-position:top; background-size:1200px 900px; height:auto;">
+                <h3 style="color:green"; align="center"><u><b>FARMHOUSE REGISTRATION</b></u></h3>
+        <center>
+            <div class="col-xs-12" style="padding:10px;">
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <div class="alert alert-warning" role="alert" style="width:50%;">
+                        <li style="list-style-type: none;" {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                            {{ message }}
+                        </li>
+                    </div>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+        </center>
+        <div class="main-div">
+
+<form action="" method="post" enctype="multipart/form-data" style="color:white"; >
+    {% csrf_token %}
+    <div class="form">
+    {% bootstrap_form form_key %}
+        </div>
+    <input type="submit" value="Register">
+</form>
+        </div>
+</section>
+{% endblock content %}

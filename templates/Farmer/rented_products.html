@@ -1,0 +1,63 @@
+{% extends 'Farmer/Farmer_Nav.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% load static %}
+<head>
+    <link href="{% static 'css/style1.css' %}" rel="stylesheet">
+</head>
+{% block content %}
+<section class="main">
+    {% if count == 0 %}
+    <center>
+        <div class="col-xs-12" style="padding:150px;">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <div class="alert alert-warning" role="alert" style="width:50%;">
+                    <li %} %} class="{{ message.tags }}" endif if message.tags style="list-style-type: none;" {% {%>{{ message }}
+                    </li>
+                </div>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </center>
+    {% else %}
+    <div class="main-div" style="padding:150px;">
+        <table border="1" class="table table-hover">
+            <tr>
+
+                <th>DATE</th>
+                <th>NAME</th>
+                <th>ADDRESS</th>
+                <th>PHONE_NUMBER</th>
+                <th>STATE</th>
+                <th>CITY</th>
+                <th>NO OF DAYS</th>
+                <th>MACHINE</th>
+
+            </tr>
+
+            {% for i in page_obj %}
+            <tr>
+                <td>{{i.requested_on}}</td>
+                <td>{{i.farmhouse_id.First_Name}} {{i.farmhouse_id.Last_Name}}</td>
+                <td>{{i.farmhouse_id.Address}}</td>
+                <td>{{i.farmhouse_id.Phone_No}}</td>
+                <td>{{i.farmhouse_id.State}}</td>
+                <td>{{i.farmhouse_id.City}}</td>
+                <td>{{i.no_of_days}}</td>
+                <td ><img alt="" height="50px" src="{{i.machine_id.image.url}}" width="50px"></td>
+
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <center>{% include "pagination.html" %}</center>
+    {% endif %}
+
+</section>
+{% endblock content %}

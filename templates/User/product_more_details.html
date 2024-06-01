@@ -1,0 +1,40 @@
+{% extends 'User/User_Nav.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% load static %}
+<head>
+    <link href="{% static 'css/style1.css' %}" rel="stylesheet">
+</head>
+{% block content %}
+<section class="main" style="height:auto;">
+        <center>
+    <div class="col-xs-12"  style="padding:10px;">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <div class="alert alert-warning" role="alert" style="width:50%;">
+                <li style="list-style-type: none;" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            </div>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+    </center>
+    <div class="main-div">
+        <div>
+            <img alt="" class="img-fluid" height="500px" src="{{ products.Image.url }}" width="500px">
+            <div class="p-4">
+                <h4 class="mb-3">{{ products.Name }}</h4>
+                <p>{{ products.Description }}</p>
+                <h4 class="text-primary">₹ {{ products.Price }}</h4>
+            </div>
+            <a class="btn btn-dark rounded-pill py-2 px-4 m-2" href="{% url 'add_to_cart' login_id products.Product_Id %}">Add to Cart <i
+                    class="fa fa-cart-plus ms-2"></i></a>
+        </div>
+
+    </div>
+</section>
+{% endblock content %}

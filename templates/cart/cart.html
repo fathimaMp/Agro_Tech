@@ -1,0 +1,117 @@
+{% extends 'User/User_Nav.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% load static %}
+<head>
+    <link href="{% static 'css/style1.css' %}" rel="stylesheet">
+</head>
+{% block content %}
+
+{% if messages %}
+<section class="main">
+    <center>
+        <div class="col-xs-12" style="padding:10px;">
+
+            <ul class="messages">
+                {% for message in messages %}
+                <div class="alert alert-warning" role="alert" style="width:50%;">
+                    <li style="list-style-type: none;" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                </div>
+                {% endfor %}
+            </ul>
+        </div>
+    </center>
+</section>
+    {% else %}
+
+<section class="ftco-section ftco-cart">
+			<div class="container">
+				<div class="row">
+    			<div class="col-md-12 ftco-animate">
+    				<div class="cart-list">
+	    				<table class="table">
+						    <thead class="thead-primary">
+						      <tr class="text-center">
+						        <th>&nbsp;</th>
+						        <th>&nbsp;</th>
+						        <th>Product name</th>
+						        <th>Price</th>
+						        <th>Quantity</th>
+						      </tr>
+						    </thead>
+						    <tbody>
+{% if count == 1 %}
+                <tr class="text-center">
+						        <td class="product-remove"><a href="{% url 'remove_cart_item' login_id cart_item.item_id  cart_item.carts_id  %}"><span class="ion-ios-close"></span></a></td>
+
+						        <td class="image-prod"><img alt="" class="img-fluid" height="100px" src="{{ cart_item.product_id.Image.url }}"  width="100px"></td>
+
+						        <td class="product-name">
+						        	<h3>{{ cart_item.product_id.Name }}</h3>
+						        </td>
+
+						        <td class="price">{{ cart_item.product_id.Price }}</td>
+
+<!--						        <td class="quantity">-->
+<!--						        	<div class="input-group mb-3">-->
+<!--					             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">-->
+<!--					          	</div>-->
+<!--					          </td>-->
+                                    <td class="quantity">
+                    <div class="col-xs-6" style="display:flex;">
+                        <div class="p-4"><a class="btn btn-primary"  href="{% url 'dnc_qty' login_id cart_item.item_id %}">-</a></div>
+                        <div class="p-4"><input type="text" value="{{ cart_item.qty }}" id="qty" style="width:40px; text-align:center;" disabled></div>
+                        <div class="p-4"><a class="btn btn-primary"  href="{% url 'inc_qty' login_id cart_item.item_id %}">+</a></div>
+
+                    </div>
+                </td>
+
+
+                </tr>
+            {% else %}
+            {% for i in cart_item %}
+						      <tr class="text-center">
+						        <td class="product-remove"><a href="{% url 'remove_cart_item' login_id i.item_id i.carts_id %}"><span class="ion-ios-close"></span></a></td>
+
+						        <td class="image-prod"><img alt="" class="img-fluid" height="100px" src="{{ i.product_id.Image.url }}"  width="100px"></td>
+						        <td class="product-name">
+						        	<h3>{{ i.product_id.Name }}</h3>
+						        </td>
+
+						        <td class="price">{{ i.product_id.Price }}</td>
+
+<!--						        <td class="quantity">-->
+<!--						        	<div class="input-group mb-3">-->
+<!--					             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">-->
+<!--					          	</div>-->
+<!--					          </td>-->
+                                    <td class="quantity">
+                    <div class="col-xs-6" style="display:flex;">
+                        <div class="p-4"><a class="btn btn-primary"  href="{% url 'dnc_qty' login_id i.item_id %}">-</a></div>
+                        <div class="p-4"><input type="text" value="{{ i.qty }}" id="qty" style="width:40px; text-align:center;" disabled></div>
+                        <div class="p-4"><a class="btn btn-primary"  href="{% url 'inc_qty' login_id i.item_id %}">+</a></div>
+
+                    </div>
+                </td>
+
+
+						      </tr><!-- END TR-->
+                              {% endfor %}
+            {% endif %}
+         </tbody>
+						  </table>
+					  </div>
+    			</div>
+    		</div>
+            </div>
+
+        <center><a class="btn btn-outline-success mx-auto d-grid gap-2 col-6" href="{% url 'place_order' login_id cart_id %}" >Place Order</a></center>
+    {% endif %}
+</section>
+{% endblock content %}
+
+
+

@@ -1,0 +1,42 @@
+{% extends 'Farmer/Farmer_Nav.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% load static %}
+<head>
+    <link href="{% static 'css/style1.css' %}" rel="stylesheet">
+</head>
+{% block content %}
+<section class="main" style="height:auto;background-color:#d9d9d9">
+        <center>
+    <div class="col-xs-12"  style="padding-top:150px;">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <div class="alert alert-warning" role="alert" style="width:50%;">
+                <li style="list-style-type: none;" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            </div>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+    </center>
+    <div class="main-div">
+        <div>
+            <img alt="" class="img-fluid" height="400px" src="{{ products.image.url }}" width="400px">
+            <div class="p-4">
+                <h4 class="mb-3">{{ products.name }}</h4>
+                <p>{{ products.description }}</p>
+                <h4 class="text-primary">₹ {{ products.price }}</h4>
+            </div>
+            <a class="btn btn-dark rounded-pill py-2 px-4 m-2 mx-auto d-grid gap-2 col-12" href="{% url 'farmer_machine_request' login_id products.farmhouse_id products.machine_id %}">Request</a>
+        <br>
+        <br>
+        <br>
+        </div>
+
+    </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,52 @@
+{% extends 'Admin/Admin_Nav.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% load static %}
+<head>
+    <link href="{% static 'css/style1.css' %}" rel="stylesheet">
+</head>
+{% block content %}
+<section class="main" >
+<div class="main-div">
+    <table  class="table table-hover" style="">
+        <tr>
+            <th>Caption</th>
+            <th>Uploaded_On</th>
+            <th>LastDate</th>
+            <th colspan="2">Operations</th>
+            <th></th>
+        </tr>
+
+        {% for i in page_obj %}
+        <tr data-href="{{ i.image.url }}">
+            <td style="color:blue;">{{i.caption}}</td>
+            <td>{{i.uploaded_on}}</td>
+            <td>{{i.lastdate}}</td>
+            <td><a class="btn btn-danger" href="{% url 'delete_policy' login_id i.policy_id %}">Delete</a></td>
+            <td><a class="btn btn-success" href="{% url 'edit_policy' login_id i.policy_id %}">Edit</a></td>
+
+
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+<center>{% include "pagination.html" %}</center>
+    <script language="JavaScript">
+  document.addEventListener("DOMContentLoaded", function() {
+    const tableRows = document.querySelectorAll("tr[data-href]");
+
+    tableRows.forEach(function(row) {
+      row.addEventListener("click", function() {
+        const url = this.getAttribute("data-href");
+        if (url) {
+          window.location.href = url; // Redirect to the specified URL
+        }
+      });
+    });
+  });
+</script>
+    </section>
+{% endblock content %}

@@ -1,0 +1,50 @@
+{% extends 'User/User_Nav.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% load static %}
+<head>
+    <link href="{% static 'css/style1.css' %}" rel="stylesheet">
+</head>
+{% block content %}
+<section class="main" style="height:auto;">
+    <center><h4> My Orders </h4></center>
+    <div class="main-div">
+
+        <table class="table table-striped">
+            <tr>
+                <th>Order Id</th>
+                <th>Product</th>
+                <th>Product Name</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Total Amount</th>
+                <th>Order Date</th>
+                <th>Order status</th>
+            </tr>
+            {% for i in page_obj %}
+            <tr>
+                <td>{{i.order_id}}</td>
+                <td><img alt="" height="50px" src="{{i.cart_item_id.product_id.Image.url}}" width="50px"></td>
+                <td>{{i.cart_item_id.product_id.Name}}</td>
+                <td>{{i.cart_item_id.qty}}</td>
+                <td>{{i.cart_item_id.product_id.Price}}</td>
+                <td>{{i.total_product_price}}</td>
+                <td>{{i.order_date}}</td>
+                {% if i.deliver_status %}
+                <td>Delivered</td>
+                {% else %}
+                <td>Order Placed </td>
+                {% endif %}
+
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+    <center>{% include "pagination.html" %}</center>
+</section>
+{% endblock content %}
+-->
