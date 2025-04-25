@@ -24,3 +24,17 @@ Order Management: Track orders and sales directly from the dashboard.
 
 Authentication & Authorization: Secure login and role-based access control.
 
+
+🛠️ Technologies
+----------------
+
+Backend: Python, Django
+
+Frontend: HTML, CSS, Tailwind CSS, JavaScript
+
+Database: SQLite (default) / can be upgraded to PostgreSQL
+
+Payment Gateway: Razorpay API (if included)
+
+Version Control: Git & GitHub
+
