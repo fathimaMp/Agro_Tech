@@ -38,3 +38,7 @@ Payment Gateway: Razorpay API (if included)
 
 Version Control: Git & GitHub
 
+
+📷 Screenshots
+---------------
+
