@@ -34,8 +34,6 @@ Frontend: HTML, CSS, Tailwind CSS, JavaScript
 
 Database: SQLite (default) / can be upgraded to PostgreSQL
 
-Payment Gateway: Razorpay API (if included)
-
 Version Control: Git & GitHub
 
 
