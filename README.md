@@ -5,8 +5,8 @@ The project provides a platform where farmers can manage agricultural activities
 agricultural experts, suppliers, and buyers.
 
 
-🚀 Features
-------------
+Features
+---------
 
 User Roles: Separate dashboards for Admin, Farmers, and Experts.
 
