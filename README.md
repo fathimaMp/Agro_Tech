@@ -25,8 +25,8 @@ Order Management: Track orders and sales directly from the dashboard.
 Authentication & Authorization: Secure login and role-based access control.
 
 
-🛠️ Technologies
-----------------
+Technologies
+-------------
 
 Backend: Python, Django
 
