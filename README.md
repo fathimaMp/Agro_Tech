@@ -37,6 +37,14 @@ Database: SQLite (default) / can be upgraded to PostgreSQL
 Version Control: Git & GitHub
 
 
+Modules
+-------
+1. Admin
+2. Farmer
+3. Farmhouse
+4. 
+
+
 📷 Screenshots
 ---------------
 
