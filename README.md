@@ -43,7 +43,7 @@ Modules
 2. Farmer
 3. Farmhouse
 4. Delivery Agent
-5. Normal User
+5. Customer 
 
 
 📷 Screenshots
