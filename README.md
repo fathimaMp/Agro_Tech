@@ -49,6 +49,11 @@ Modules
 📷 Screenshots
 ---------------
 
+Home Page
+---------
+![Screenshot 2023-11-23 073306](https://github.com/user-attachments/assets/c460e064-c5e6-43b5-9f90-229f5c079d4a)
+
+
 Login Page
 -----------
 ![Uploading Screenshot 2023-11-23 081405.png…]()
