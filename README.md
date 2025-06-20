@@ -42,9 +42,8 @@ Modules
 1. Admin
 2. Farmer
 3. Farmhouse
-4. 
-5. Delivery Agent
-6. Customer 
+4. Delivery Agent
+5. Customer 
 
 
 📷 Screenshots
