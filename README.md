@@ -59,4 +59,8 @@ Login Page
 -----------
 ![Screenshot 2023-11-23 081405](https://github.com/user-attachments/assets/9e27f1e2-6511-4e36-b680-b4fc0384bd46)
 
+Registration
+------------
+![Screenshot 2023-11-23 073655](https://github.com/user-attachments/assets/5e75653d-afaa-4f23-961d-2f6bea0aeddb)
+
 
