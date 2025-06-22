@@ -62,4 +62,6 @@ Registration
 ------------
 ![Screenshot 2023-11-23 073655](https://github.com/user-attachments/assets/5e75653d-afaa-4f23-961d-2f6bea0aeddb)
 
-
+Profile
+-------
+![Screenshot 2023-11-23 081315](https://github.com/user-attachments/assets/914fbf03-73e5-4f54-8c62-a29d97e0ae09)
