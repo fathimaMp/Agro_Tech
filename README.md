@@ -70,6 +70,9 @@ Add Govt Policy
 ---------------
 ![Screenshot 2023-11-23 082646](https://github.com/user-attachments/assets/5f4558d1-ddc0-401f-a5c9-454e2aeac028)
 
+![Screenshot 2023-11-23 015354](https://github.com/user-attachments/assets/ce4c9ce3-ca46-4d03-afaa-bd80536a225d)
+
+
 List Category
 -------------
 ![Screenshot 2023-11-23 083039](https://github.com/user-attachments/assets/28e0fb7c-ee02-4c84-8d28-b5fb0eb39371)
