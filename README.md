@@ -84,3 +84,7 @@ Add Categories
 ![Screenshot 2023-11-23 011143](https://github.com/user-attachments/assets/cf1d2d6c-3aa1-4f93-b822-638db7850962)
 ![Screenshot 2023-11-23 082809](https://github.com/user-attachments/assets/520743b6-310e-4ba0-81d3-affab4f636cf)
 
+Product List
+------------
+![Screenshot 2023-11-23 074535](https://github.com/user-attachments/assets/82cded0e-fd42-4cd0-b6b3-d1bd6b97f867)
+
