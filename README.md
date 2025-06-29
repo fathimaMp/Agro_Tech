@@ -80,7 +80,7 @@ List Category
 ![Screenshot 2023-11-23 083039](https://github.com/user-attachments/assets/28e0fb7c-ee02-4c84-8d28-b5fb0eb39371)
 
 Add Categories
---------------
+-------------
 ![Screenshot 2023-11-23 011143](https://github.com/user-attachments/assets/cf1d2d6c-3aa1-4f93-b822-638db7850962)
 ![Screenshot 2023-11-23 082809](https://github.com/user-attachments/assets/520743b6-310e-4ba0-81d3-affab4f636cf)
 
