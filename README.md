@@ -88,5 +88,8 @@ Product List
 ------------
 ![Screenshot 2023-11-23 074535](https://github.com/user-attachments/assets/82cded0e-fd42-4cd0-b6b3-d1bd6b97f867)
 
+Cart
+-----
 ![Screenshot 2023-11-23 074703](https://github.com/user-attachments/assets/7b4dc098-7464-4b7f-9f62-d0a43b19bd59)
+![Screenshot 2023-11-23 074801](https://github.com/user-attachments/assets/1ea18baa-3608-4725-999d-3eaab7395947)
 
