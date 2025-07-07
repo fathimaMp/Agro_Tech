@@ -92,6 +92,9 @@ Cart
 -----
 ![Screenshot 2023-11-23 074703](https://github.com/user-attachments/assets/7b4dc098-7464-4b7f-9f62-d0a43b19bd59)
 ![Screenshot 2023-11-23 074801](https://github.com/user-attachments/assets/1ea18baa-3608-4725-999d-3eaab7395947)
+
+checkout
+--------
 ![Screenshot 2023-11-23 080302](https://github.com/user-attachments/assets/a01d0bae-c0c1-4541-8e4a-827de4f39596)
 
 ![Screenshot 2023-11-23 014837](https://github.com/user-attachments/assets/b6f09f5c-5fb9-4433-9d7d-0531204f2ade)
