@@ -100,6 +100,6 @@ checkout
 ![Screenshot 2023-11-23 014837](https://github.com/user-attachments/assets/b6f09f5c-5fb9-4433-9d7d-0531204f2ade)
 
 view machinery
---------------
+---------------
 ![Screenshot 2023-11-23 022506](https://github.com/user-attachments/assets/b02faa27-dfee-4d7e-9513-e48b9976bddc)
 ![Screenshot 2023-11-23 022506](https://github.com/user-attachments/assets/6e744401-efce-4d02-ae24-71def0274136)
